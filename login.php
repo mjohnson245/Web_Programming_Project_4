@@ -54,7 +54,7 @@
 				if($_POST['loginUser']==$Username && $_POST['loginPass']==$Password ) {
 					$_SESSION['Points'] = 0;
 					$_SESSION['questions'] = 0;
-					header('Location: carrentalmain.php');
+					header('Location: inventory.php');
 					exit();
 				}
 			}			

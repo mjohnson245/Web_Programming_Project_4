@@ -44,11 +44,24 @@
 		</form>
 
 		<?php 
-		
+				include 'db_controller.php';
+				$conn = new mysqli($db_server, $db_username, $db_password, $db_name);
+				// Check connection
+				if ($conn->connect_error) {
+					die("Connection failed: " . $conn->connect_error);
+				}
+			
 				if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$_SESSION['Username'] = $_POST['Username'];
 					$_SESSION['Password'] = $_POST['Password'];
 					if(!$_POST['Username'] == "" && !$_POST['Password'] == "") {
+							$login_info = "INSERT INTO userinfo (username, password) VALUES ('".$_POST['Username']."', '".$_POST['Password']."')";
+							if (mysqli_query($conn, $login_info)) {
+								//echo "New record created successfully";
+							} else {
+								echo "Error: " . $sql . "" . mysqli_error($conn);
+							}
+							$conn->close();
 							header('Location: login.php');
 							exit();			
 						
