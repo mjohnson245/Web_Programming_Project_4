@@ -26,7 +26,7 @@
 			header('Location: menu.php');
 		}			
 	?>
-	<form method="post" name="CarSelection">
+	<form method="post" action="viewcart.php" name="CarSelection">
 		<fieldset id="type-fieldset" >
 			<legend>Please Choose A Car Type</legend>
 			<input type="radio" id="SUVid" value="SUV" name= "cartype">
@@ -46,35 +46,35 @@
 			<legend>Please Choose a Brand</legend>
 			<label for="brands">Car Brands</label>
 			<select name="brand">
-				<option value="audi" >Audi</option>
-				<option value="bmw" >BMW</option>
-				<option value="cadillac" >Cadillac</option>
-				<option value="chevrolet" >Chevrolet</option>
-				<option value="ferrari">Ferrai</option>
-				<option value="ford" >Ford</option>
-				<option value="honda">Honda</option>
-				<option value="hyundai" >Hyundai</option>
-				<option value="jeep" >Jeep</option>
-				<option value="nissan" >Nissan</option>
-				<option value="porsche" >Porsche</option>
-				<option value="ram" >RAM</option>
-				<option value="subaru">Subaru</option>
-				<option value="toyota" >Toyota</option>
-				<option value="volkswagen">Volkswagen</option>
-				<option value="volvo" >Volvo</option>	
+				<option value="Audi" >Audi</option>
+				<option value="BMW" >BMW</option>
+				<option value="Cadillac" >Cadillac</option>
+				<option value="Chevrolet" >Chevrolet</option>
+				<option value="Ferrari">Ferrai</option>
+				<option value="Ford" >Ford</option>
+				<option value="Honda">Honda</option>
+				<option value="Hyundai" >Hyundai</option>
+				<option value="Jeep" >Jeep</option>
+				<option value="Nissan" >Nissan</option>
+				<option value="Porsche" >Porsche</option>
+				<option value="RAM" >RAM</option>
+				<option value="Subaru">Subaru</option>
+				<option value="Toyota" >Toyota</option>
+				<option value="Volkswagen">Volkswagen</option>
+				<option value="Volvo" >Volvo</option>	
 			</select>
 		</fieldset>
 
 		<fieldset id="color-fieldset">
 			<legend>Please Select A Color</legend>
 			<select name="color">
-				<option value="red" >Red</option>
-				<option value="blue">Blue</option>
-				<option value="black">Black</option>
-				<option value="white">White</option>
-				<option value="brown">Brown</option>
-				<option value="gray">Gray</option>
-				<option value="silver">Silver</option>
+				<option value="Red" >Red</option>
+				<option value="Blue">Blue</option>
+				<option value="Black">Black</option>
+				<option value="White">White</option>
+				<option value="Brown">Brown</option>
+				<option value="Gray">Gray</option>
+				<option value="Silver">Silver</option>
 			</select>
 		</fieldset>
 		<h2>Subtotal: </h2>

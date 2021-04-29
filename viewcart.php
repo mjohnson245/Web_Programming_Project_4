@@ -13,7 +13,13 @@
 <body>
 	<h1>Your Cart Below</h1>
 	<div class="flex-container">
-		<div id="cars">Car shown here.</div>
+		<div id="cars">
+			<?php
+				echo "Car type: ".$_POST["cartype"]."<br>";
+				echo "Brand: ".$_POST["brand"]."<br>";
+				echo "Color: ".$_POST["color"];
+			?>
+		</div>
 		<div id="summary">
 			<p>Subtotal: </p>
 			<p>Tax: </p>
