@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<title>Car Rental Main Page</title>
-	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="rentalstyle.css">
+	<meta charset="utf-8">
 </head>
 <body>
 	<header>

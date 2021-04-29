@@ -1,8 +1,14 @@
-  
+  <?php
+	session_save_path("./");
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>Your Cart</title>
+	<link rel="stylesheet" type="text/css" href="rentalstyle.css">
 </head>
 <body>
 	<h1>Your Cart Below</h1>
@@ -12,9 +18,11 @@
 			<p>Subtotal: </p>
 			<p>Tax: </p>
 			<hr>
-			<p>Total: </p>
+			<h2>Total: </h2>
 		</div>
 	</div>
-	<button onclick="document.location='checkout.php'">Proceed to Checkout</button>
+	 <form method="post" action="checkout.php">
+		<input type="submit" name="checkout" value="Proceed to Checkout">
+	</form>
 </body>
 </html>
