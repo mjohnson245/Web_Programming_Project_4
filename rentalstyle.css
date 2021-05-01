@@ -14,3 +14,9 @@ header {
 .logout{
 	float: right;
 }
+
+.flex-container {
+	display: flex;
+	flex-wrap: nowrap;
+	text-align: center;
+}
