@@ -26,7 +26,7 @@
 			header('Location: menu.php');
 		}			
 	?>
-	<form method="post" action="viewcart.php" name="CarSelection">
+	<form method="post" action="inventory.php" name="CarSelection">
 		<fieldset id="type-fieldset" >
 			<legend>Please Choose A Car Type</legend>
 			<input type="radio" id="SUVid" value="SUV" name= "cartype">

@@ -8,6 +8,7 @@
 <body>
 	<header>
 		<h1>Car Rental Service</h1>
+
 		<p>Start renting luxury or affordable cars today!</p>
 		<a href="login.php">Go to Login</a><br>
 		or<br>

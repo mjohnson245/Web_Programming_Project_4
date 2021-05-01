@@ -12,14 +12,14 @@
 </head>
 <body>
 	<h1>Your Cart Below</h1>
-	<div class="flex-container">
+	
 		<div id="cars">
 			<?php
-				echo "Car type: ".$_POST["cartype"]."<br>";
-				echo "Brand: ".$_POST["brand"]."<br>";
-				echo "Color: ".$_POST["color"];
+				echo "Car type: ".$_SESSION["Cartype"]."<br>";
+				echo "Brand: ".$_SESSION["Brand"]."<br>";
+				echo "Color: ".$_SESSION["Color"];
 			?>
-		</div>
+	
 		<div id="summary">
 			<p>Subtotal: </p>
 			<p>Tax: </p>

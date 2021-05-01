@@ -23,10 +23,10 @@
 			    $Username = $Password = "";
 				$success = "";
 				if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
-					if($_POST['Username'] == "") {
+					if($_POST['username'] == "") {
 						$usernameErr = "Username is required";
 					}
-					if($_POST['Password'] == "") {
+					if($_POST['password'] == "") {
 						$passwordErr = "Password is required";
 					}
 				}
@@ -35,12 +35,12 @@
 
 		<form method="post" name="Signup">
 			<?php echo $success;?>
-			<label class="left" for="Username">Username:</label>
-			<input type="text" name="Username" size="16" placeholder="Username">
+			<label for="username">Username:</label>
+			<input type="text" name="username" size="16" placeholder="Username">
 			<span class="error"><?php echo $usernameErr;?></span>
 			<br/>
-			<label class="left" for="Password">Password:</label>
-			<input type="password" name="Password" size="16" placeholder="Password">
+			<label for="password">Password:</label>
+			<input type="password" name="password" size="16" placeholder="Password">
 			<span class="error"><?php echo $passwordErr;?></span>
 			<br/><br/>
 			<input type="submit" name="signup" value="Sign up">
@@ -56,16 +56,17 @@
 				}
 			
 				if ($_SERVER["REQUEST_METHOD"] == "POST") {
-					$_SESSION['Username'] = $_POST['Username'];
-					$_SESSION['Password'] = $_POST['Password'];
-					if(!$_POST['Username'] == "" && !$_POST['Password'] == "") {
-						$result = mysqli_query($conn, "SELECT * FROM userinfo WHERE username='".$_POST['Username']."'");
+					
+					if(!$_POST['username'] == "" && !$_POST['password'] == "") {
+						$result = mysqli_query($conn, "SELECT * FROM userinfo WHERE username='".$_POST['username']."'");
 						$num_rows = mysqli_num_rows($result);
 						if($num_rows>0){
 							echo "Account already exists";
 						}
 						else{
-							$login_info = "INSERT INTO userinfo (username, password) VALUES ('".$_POST['Username']."', '".$_POST['Password']."')";
+							$_SESSION['Username'] = $_POST['username'];
+							$_SESSION['Password'] = $_POST['password'];
+							$login_info = "INSERT INTO userinfo (username, password) VALUES ('".$_POST['username']."', '".$_POST['password']."')";
 							if (mysqli_query($conn, $login_info)) {
 								echo '<span id="success">'."Account created successfully".'</span>';
 							} else {

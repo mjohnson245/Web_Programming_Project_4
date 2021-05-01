@@ -13,29 +13,14 @@
 </head>
 <body>
 
-<?php
-	$Username= $_SESSION['Username'];
-	$Password= $_SESSION['Password'];
 
-
-	$loginUser = $loginPass = "";
-	/*if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		
-		if($_POST['loginUser'] != $Username) {
-			$usernameErr = "Username is incorrect";
-		}
-		if($_POST['loginPass'] != $Password) {
-			$passwordErr = "Password is incorrect";
-			}
-	}*/	
-?>
 
 <form method="post" name="Login">
     <h1>Login</h1>
-    <label class="left" for="loginUser">Username:</label>
+    <label for="loginUser">Username:</label>
     <input name="loginUser" type="text"/>
     <br/>
-    <label class="left" for="loginPass">Password:</label>
+    <label for="loginPass">Password:</label>
     <input name="loginPass" type="password"/>
     <br/>
     <br/>
@@ -56,6 +41,8 @@
 			$result = mysqli_query($conn, "SELECT * FROM userinfo WHERE username='".$_POST['loginUser']."' AND password='".$_POST['loginPass']."'");
 			$num_rows = mysqli_num_rows($result);
 			if($num_rows>0) {
+				$_SESSION['Username'] = $_POST['loginUser'];
+				$_SESSION['Password'] = $_POST['loginPass'];
 				$conn->close();
 				header('Location: inventory.php');
 				exit();
