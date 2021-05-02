@@ -39,14 +39,7 @@ PRIMARY KEY (cardid),
 FOREIGN KEY (userid) REFERENCES userinfo(userid)
 )";
 
-$cart = "CREATE TABLE cart (
-userid INT NOT NULL,
-carid INT NOT NULL,
-FOREIGN KEY (userid) REFERENCES userinfo(userid),
-FOREIGN KEY (carid) REFERENCES car(carid)
-)";
-
-$sql = [$profile, $car, $card, $cart];
+$sql = [$profile, $car, $card];
 
 foreach($tables as $k => $sql){
     $query = @$conn->query($sql);
@@ -58,11 +51,9 @@ foreach($tables as $k => $sql){
 	}
 }
 
-
 foreach($errors as $msg) {
    echo "$msg <br>";
 }
 
 $conn->close();
-
 ?>
