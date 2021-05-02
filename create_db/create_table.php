@@ -20,11 +20,13 @@ PRIMARY KEY (userid)
 
 $car = "CREATE TABLE car (
 carid INT NOT NULL AUTO_INCREMENT=100000,
+userid INT NOT NULL,
 car_type VARCHAR(30) NOT NULL,
 car_brand VARCHAR(30) NOT NULL,
 car_color VARCHAR(30) NOT NULL,
-price VARCHAR(30) NOT NULL,
-PRIMARY KEY (carid)
+price INT NOT NULL,
+PRIMARY KEY (carid),
+FOREIGN KEY (userid) REFERENCES userinfo(userid)
 )";
 
 $card = "CREATE TABLE card (
