@@ -25,27 +25,27 @@
 				
 				//Update sql table
 				echo "Car type: ".$_SESSION["Cartype"]."<br>";
-				$sql = "UPDATE userinfo SET car_type='".$_SESSION["Cartype"]."'";
+				$sql = "UPDATE car SET car_type='".$_SESSION["Cartype"]."'";
 				echo "Brand: ".$_SESSION["Brand"]."<br>";
-				$sql = "UPDATE userinfo SET car_brand='".$_SESSION["Brand"]."'";
+				$sql = "UPDATE car SET car_brand='".$_SESSION["Brand"]."'";
 				echo "Color: ".$_SESSION["Color"]."<br>";
-				$sql = "UPDATE userinfo SET car_color='".$_SESSION["Color"]."'";
+				$sql = "UPDATE car SET car_color='".$_SESSION["Color"]."'";
 				
 				//Normal price of car type
-				$suvPrice = 25000;
-				$truckPrice = 30000;
-				$sedanPrice =  20000;
-				$luxuryPrice = 35000;
+				$suvPrice = 750;
+				$truckPrice = 800;
+				$sedanPrice =  500;
+				$luxuryPrice = 1000;
 				$subTotal = 0;
 				
 				//Adjust price based on brand
 				if($_SESSION["Brand"] == "Audi" || $_SESSION["Brand"] == "BMW" || $_SESSION["Brand"] == "Cadillac" ||
 				$_SESSION["Brand"] == "RAM" || $_SESSION["Brand"] == "Volvo") {
-					$subTotal = $subTotal + 5000;
+					$subTotal = $subTotal + 200;
 				} elseif($_SESSION["Brand"] == "Porsche") {
-					$subTotal = $subTotal + 30000;
+					$subTotal = $subTotal + 500;
 				} elseif($_SESSION["Brand"] == "Ferrari") {
-					$subTotal = $subTotal + 190000;
+					$subTotal = $subTotal + 1000;
 				} else {
 					$subTotal = 0;
 				}
@@ -54,19 +54,23 @@
 				if($_SESSION["Cartype"] == "SUV") {
 					$subTotal = $subTotal + $suvPrice;
 					$_SESSION["sub"] = $subTotal;
-					echo "Price: ".$_SESSION["suvPrice"];
+					$sql = "UPDATE car SET price='".$_SESSION["sub"]."'";
+					echo "Price: ".$_SESSION["sub"];
 				} elseif($_SESSION["Cartype"] == "Truck") {
 					$subTotal = $subTotal + $truckPrice;
 					$_SESSION["sub"] = $subTotal;
-					echo "Price: ".$_SESSION["truckPrice"];
+					$sql = "UPDATE car SET price='".$_SESSION["sub"]."'";
+					echo "Price: ".$_SESSION["sub"];
 				} elseif($_SESSION["Cartype"] == "Sedan") {
 					$subTotal = $subTotal + $sedanPrice;
 					$_SESSION["sub"] = $subTotal;
-					echo "Price: ".$_SESSION["sedanPrice"];
+					$sql = "UPDATE car SET price='".$_SESSION["sub"]."'";
+					echo "Price: ".$_SESSION["sub"];
 				} else {
 					$subTotal = $subTotal + $luxuryPrice;
 					$_SESSION["sub"] = $subTotal;
-					echo "Price: ".$_SESSION["luxuryPrice"];
+					$sql = "UPDATE car SET price='".$_SESSION["sub"]."'";
+					echo "Price: ".$_SESSION["sub"];
 				}
 			?>
 		</div>
