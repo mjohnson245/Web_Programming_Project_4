@@ -46,17 +46,17 @@ function getCreditCardType(cardnumber){
 
   if (/^5[1-5]/.test(cardnumber)){
     result = "mastercard";
-    document.write('<img  src="mastercard.png" style="width: 415px; height: 566px; margin: 1px;" />');
+    document.write('<img src="mastercard.png">');
   }
 
   else if (/^4/.test(cardnumber)){
     result = "visa";
-    document.write('<img  src="visa.png" style="width: 415px; height: 566px; margin: 1px;" />');
+    document.write('<img src="visa.png">');
   }
 
   else if (/^3[47]/.test(cardnumber)){
     result = "amex";
-    document.write('<img  src="express.png" style="width: 415px; height: 566px; margin: 1px;" />');
+    document.write('<img src="express.png">');
   }
 
   return result;
