@@ -42,24 +42,28 @@
 				if($_SESSION["Brand"] == "Audi" || $_SESSION["Brand"] == "BMW" || $_SESSION["Brand"] == "Cadillac" ||
 				$_SESSION["Brand"] == "RAM" || $_SESSION["Brand"] == "Volvo") {
 					$subTotal = $subTotal + 5000;
-				} else if($_SESSION["Brand"] == "Porsche") {
+				} elseif($_SESSION["Brand"] == "Porsche") {
 					$subTotal = $subTotal + 30000;
-				} else if($_SESSION["Brand"] == "Ferrari") {
+				} elseif($_SESSION["Brand"] == "Ferrari") {
 					$subTotal = $subTotal + 190000;
 				} else {
 					break;
 				}
+				
+				$brand = $_SESSION["Brand"];
+				
+				
 				
 				//Finding subtotal based on brand and car type
 				if($_SESSION["Cartype"] == "SUV") {
 					$subTotal = $subTotal + $suvPrice;
 					$_SESSION["sub"] = $subTotal;
 					echo "Price: ".$_SESSION["suvPrice"];
-				} else if($_SESSION["Cartype"] == "Truck") {
+				} elseif($_SESSION["Cartype"] == "Truck") {
 					$subTotal = $subTotal + $truckPrice;
 					$_SESSION["sub"] = $subTotal;
 					echo "Price: ".$_SESSION["truckPrice"];
-				} else if($_SESSION["Cartype"] == "Sedan") {
+				} elseif($_SESSION["Cartype"] == "Sedan") {
 					$subTotal = $subTotal + $sedanPrice;
 					$_SESSION["sub"] = $subTotal;
 					echo "Price: ".$_SESSION["sedanPrice"];
