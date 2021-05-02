@@ -50,10 +50,6 @@
 					break;
 				}
 				
-				$brand = $_SESSION["Brand"];
-				
-				
-				
 				//Finding subtotal based on brand and car type
 				if($_SESSION["Cartype"] == "SUV") {
 					$subTotal = $subTotal + $suvPrice;
