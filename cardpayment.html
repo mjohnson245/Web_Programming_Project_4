@@ -6,6 +6,7 @@
           <div class="col-50">
             <h3>Payment</h3>
             <label for="fname">Accepted Cards</label>
+            <img src="cardicon.png" width="150" height="150" id = "icon">
             <div class="icon-container">
               <i class="fa fa-cc-visa" style="color:navy;"></i>
               <i class="fa fa-cc-amex" style="color:blue;"></i>
@@ -55,28 +56,65 @@
 
   </div>
 
-  
-
 <script>
-function getCreditCardType(cardnumber){
-
+function getCreditCardType(ccnum){
   var result = "unknown";
-
-  if (/^5[1-5]/.test(cardnumber)){
+  if (/^5[1-5]/.test(ccnum)){
     result = "mastercard";
-    document.write('<img src="mastercard.png">');
   }
-
-  else if (/^4/.test(cardnumber)){
+  else if (/^4/.test(ccnum)){
     result = "visa";
-    document.write('<img src="visa.png">');
   }
-
-  else if (/^3[47]/.test(cardnumber)){
+  else if (/^3[47]/.test(ccnum)){
     result = "amex";
-    document.write('<img src="express.png">');
   }
-
   return result;
 }
+
+var type = getCreditCardType(ccnum);
+switch (type){
+  case "mastercard":
+    document.getElementById('icon').src = "mastercard.png";
+    break;
+
+  case "visa":
+    document.getElementById('icon').src = "visa.png";
+    break;
+
+  case "amex":
+    document.getElementById('icon').src = "express.png";
+    break;
+
+  default:
+}
+
+function handleEvent(event){
+  var value = event.target.value,    
+      type = getCreditCardType(value);
+  switch (type)
+  {
+    case "mastercard":
+        document.getElementById('icon').src = "mastercard.png";
+        break;
+
+    case "visa":
+        document.getElementById('icon').src = "visa.png";
+        break;
+
+    case "amex":
+        document.getElementById('icon').src = "express.png";
+        break;
+
+    default:
+  }
+}
+
+
+document.addEventListener("DOMContentLoaded", function(){
+  var textbox = document.getElementById("ccnum");
+  textbox.addEventListener("keyup", handleEvent, false);
+  textbox.addEventListener("blur", handleEvent, false);
+}, false);
+
 </script>
+
