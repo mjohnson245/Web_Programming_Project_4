@@ -57,6 +57,12 @@
   </div>
 
 <script>
+document.addEventListener("DOMContentLoaded", function(){
+  var textbox = document.getElementById("ccnum");
+  textbox.addEventListener("keyup", handleEvent, false);
+  textbox.addEventListener("blur", handleEvent, false);
+}, false);
+
 function getCreditCardType(ccnum){
   var result = "unknown";
   if (/^5[1-5]/.test(ccnum)){
@@ -109,12 +115,6 @@ function handleEvent(event){
   }
 }
 
-
-document.addEventListener("DOMContentLoaded", function(){
-  var textbox = document.getElementById("ccnum");
-  textbox.addEventListener("keyup", handleEvent, false);
-  textbox.addEventListener("blur", handleEvent, false);
-}, false);
 
 </script>
 
