@@ -15,18 +15,33 @@
 	<div class="flex-container">
 		<div id="cars">Cars
 			<?php
-				echo "Car type: ".$_SESSION["Cartype"]."<br>";
-				echo "Brand: ".$_SESSION["Brand"]."<br>";
-				echo "Color: ".$_SESSION["Color"]."<br>";
+				require "../db_controller.php";
+
+				$conn = new mysqli($db_server, $db_username, $db_password, $db_name);
+				// Check connection
+				if ($conn->connect_error) {
+					die("Connection failed: " . $conn->connect_error);
+				}
 				
+				//Update sql table
+				echo "Car type: ".$_SESSION["Cartype"]."<br>";
+				$sql = "UPDATE userinfo SET car_type='".$_SESSION["Cartype"]."'";
+				echo "Brand: ".$_SESSION["Brand"]."<br>";
+				$sql = "UPDATE userinfo SET car_brand='".$_SESSION["Brand"]."'";
+				echo "Color: ".$_SESSION["Color"]."<br>";
+				$sql = "UPDATE userinfo SET car_color='".$_SESSION["Color"]."'";
+				
+				//Normal price of car type
 				$suvPrice = 25000;
 				$truckPrice = 30000;
 				$sedanPrice =  20000;
 				$luxuryPrice = 35000;
 				$subTotal = 0;
-				if($_SESSION["Brand"] == "Audi" || $_SESSION["Brand"] == "BMW" || $_SESSION["Brand"] == "BMW" || 
-				$_SESSION["Brand"] == "Cadillac" || $_SESSION["Brand"] == "RAM" || $_SESSION["Brand"] == "Volvo") {
-					$subTotal = $subTotal + 500;
+				
+				//Adjust price based on brand
+				if($_SESSION["Brand"] == "Audi" || $_SESSION["Brand"] == "BMW" || $_SESSION["Brand"] == "Cadillac" ||
+				$_SESSION["Brand"] == "RAM" || $_SESSION["Brand"] == "Volvo") {
+					$subTotal = $subTotal + 5000;
 				} else if($_SESSION["Brand"] == "Porsche") {
 					$subTotal = $subTotal + 30000;
 				} else if ($_SESSION["Brand"] == "Ferrari") {
@@ -35,6 +50,7 @@
 					continue;
 				}
 				
+				//Finding subtotal based on brand and car type
 				if($_SESSION["Cartype"] == "SUV") {
 					$subTotal = $subTotal + $suvPrice;
 					$_SESSION["sub"] = $subTotal;
@@ -56,6 +72,7 @@
 		</div>
 		<div id="summary">Summary
 			<?php
+				//Finding tax and total based on subtotal
 				echo "Subtotal: ".$_SESSION["sub"]."<br>";
 				
 				$subTotal = $_SESSION["sub"];
@@ -68,6 +85,7 @@
 				$total = $subTotal + $tax;
 				$_SESSION["Total"] = $total;
 				echo "Total: ".$_SESSION["Total"];
+				$sql = "UPDATE userinfo SET total_price='".$_SESSION["Total"]."'";	
 			?>
 		</div>
 	</div>
