@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="card.css">
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/action_page.php">
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname">
+            <label for="ccnum">Card Number</label>
+            <input type="text" id="ccnum" name="cardnumber">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear">
+              </div>
+              <div class="col-50">
+                <label for="cvv">Security Code</label>
+                <input type="text" id="cvv" name="cvv">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <input type="submit" value="Continue to checkout" class="btn">
+      </form>
+    </div>
+  </div>
+
+  
+
+<script>
+function getCreditCardType(cardnumber){
+
+  var result = "unknown";
+
+  if (/^5[1-5]/.test(cardnumber)){
+    result = "mastercard";
+    document.write('<img  src="mastercard.png" style="width: 415px; height: 566px; margin: 1px;" />');
+  }
+
+  else if (/^4/.test(cardnumber)){
+    result = "visa";
+    document.write('<img  src="visa.png" style="width: 415px; height: 566px; margin: 1px;" />');
+  }
+
+  else if (/^3[47]/.test(cardnumber)){
+    result = "amex";
+    document.write('<img  src="express.png" style="width: 415px; height: 566px; margin: 1px;" />');
+  }
+
+  return result;
+}
+</script>
