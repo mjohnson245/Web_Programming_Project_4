@@ -47,7 +47,7 @@
 				} elseif($_SESSION["Brand"] == "Ferrari") {
 					$subTotal = $subTotal + 190000;
 				} else {
-					break;
+					$subTotal = 0;
 				}
 				
 				//Finding subtotal based on brand and car type
