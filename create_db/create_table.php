@@ -11,15 +11,15 @@ if ($conn->connect_error) {
 // sql to create table
 $errors = [];
 
-$profile = "CREATE TABLE userinfo (
+$profile = "CREATE TABLE IF NOT EXISTS userinfo (
 userid INT NOT NULL AUTO_INCREMENT,
 username VARCHAR(16)  NOT NULL,
 password VARCHAR(30) NOT NULL,
 PRIMARY KEY (userid)
 )";
 
-$car = "CREATE TABLE car (
-carid INT NOT NULL AUTO_INCREMENT=100000,
+$car = "CREATE TABLE IF NOT EXISTS car (
+carid INT NOT NULL AUTO_INCREMENT,
 userid INT NOT NULL,
 car_type VARCHAR(30) NOT NULL,
 car_brand VARCHAR(30) NOT NULL,
@@ -29,8 +29,8 @@ PRIMARY KEY (carid),
 FOREIGN KEY (userid) REFERENCES userinfo(userid)
 )";
 
-$card = "CREATE TABLE card (
-cardid INT NOT NULL AUTO_INCREMENT=5000000,
+$card = "CREATE TABLE IF NOT EXISTS card (
+cardid INT NOT NULL AUTO_INCREMENT,
 userid INT NOT NULL,
 name VARCHAR(30) NOT NULL,
 cardnumber INT(16) NOT NULL,
@@ -43,7 +43,7 @@ FOREIGN KEY (userid) REFERENCES userinfo(userid)
 
 $sql = [$profile, $car, $card];
 
-foreach($tables as $k => $sql){
+foreach($sql as $k => $sql){
     $query = @$conn->query($sql);
 
     if(!$query) {
