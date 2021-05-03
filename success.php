@@ -9,7 +9,7 @@
 	<title>Order Completed</title>
 	<link rel="stylesheet" type="text/css" href="rentalstyle.css">
 </head>
-<body>
+<body id="success-body">
 	<h1>Success!</h1>
 	<p>Your order information below:</p>	
 	<?php

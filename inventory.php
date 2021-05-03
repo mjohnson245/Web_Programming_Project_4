@@ -11,7 +11,7 @@
 	<title>Inventory</title>
 	<link rel="stylesheet" type="text/css" href="rentalstyle.css">
 </head>
-<body>
+<body id="inventory-body">
 	<h1>Begin Your Car Rental Selection<form method="post" name="Logout" class="logout">
 		<input type="submit" name="logout" value="Logout">
 	</form></h1>

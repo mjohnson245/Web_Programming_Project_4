@@ -10,8 +10,8 @@
 	<title>Car Rental Checkout</title>
 	<link rel="stylesheet" type="text/css" href="rentalstyle.css">
 </head>
-<body>
-	<h1>Checkout</h1>
+<body id="checkout-body" style="color: black;">
+	<h1 style="color: white;">Checkout</h1>
 	<?php include 'cardpayment.php';?>
 	<form method="post" name="complete" action="success.php">
 		<input type="submit" name="success" value="Complete Purchase">

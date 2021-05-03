@@ -1,6 +1,13 @@
+body {
+	font-family: Verdana, Arial;
+}
+
 header {
 	margin: auto;
 	text-align:center;
+	border:solid black 4px;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
 }
 
 .error{
@@ -19,4 +26,42 @@ header {
 	display: flex;
 	flex-wrap: nowrap;
 	text-align: center;
+}
+
+#signup-main {
+	margin: auto;
+	text-align:center;
+	border: solid 4px black;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+}
+
+#login-main {
+	margin: auto;
+	text-align:center;
+	border: solid 4px black;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+}
+
+#inventory-body {
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+}
+
+#checkout-body {
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+}
+
+#success-body {
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+}
+html {
+	background: url(https://buyyourproduct.com/wp-content/uploads/Guide-to-Car-Rental-Companies-4.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

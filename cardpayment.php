@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Your Cart</title>
-	<link rel="stylesheet" type="text/css" href="rentalstyle.css">
+	<link rel="stylesheet" type="text/css" href="card.css">
 </head>
 <body>
 	<div class="row">

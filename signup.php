@@ -15,7 +15,7 @@
 
 
 
-	<main>
+	<main id="signup-main">
 		<h1>Sign up</h1>
 			<?php 		
 

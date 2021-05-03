@@ -14,7 +14,7 @@
 <body>
 
 
-
+<main id="login-main">
 <form method="post" name="Login">
     <h1>Login</h1>
     <label for="loginUser">Username:</label>
@@ -57,5 +57,6 @@
 	<a href="signup.php" class="signup">Sign up</a>
 	<br>
 	<a href="menu.php" class="signup">Back to Homepage</a>
+	</main>
 </body>
 </html>
