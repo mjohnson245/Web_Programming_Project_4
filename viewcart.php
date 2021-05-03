@@ -13,9 +13,10 @@
 <body>
 	<h1>Your Cart Below</h1>
 	<div class="flex-container">
-		<div id="cars">Cars
+		<div>
+			<h2>Cars</h2>
 			<?php
-				require "../db_controller.php";
+				require "db_controller.php";
 
 				$conn = new mysqli($db_server, $db_username, $db_password, $db_name);
 				// Check connection
@@ -74,17 +75,18 @@
 				}
 			?>
 		</div>
-		<div id="summary">Summary
+		<div>
+			<h2>Summary</h2>
 			<?php
 				//Finding tax and total based on subtotal
 				echo "Subtotal: ".$_SESSION["sub"]."<br>";
 				
 				$subTotal = $_SESSION["sub"];
-				$tax = $subtotal * 0.8;
+				$tax = $subTotal * 0.8;
 				$_SESSION["Tax"] = $tax;
 				echo "Tax: ".$_SESSION["Tax"]."<br>";
 				
-				echo "<hr>"."<br>";
+				echo "<hr>";
 				
 				$total = $subTotal + $tax;
 				$_SESSION["Total"] = $total;
