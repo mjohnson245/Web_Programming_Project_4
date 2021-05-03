@@ -16,6 +16,15 @@ error_reporting(E_ALL ^ E_WARNING);
     <h1>Begin Your Car Rental Selection<form method="post" name="Logout" class="logout">
             <input type="submit" name="logout" value="Logout">
         </form>
+		<?php 
+		if (isset($_POST['logout'])) { 
+			setcookie(session_name(), '', 100);
+			session_unset();
+			session_destroy();
+			$_SESSION = array();
+			header('Location: menu.php');
+		}			
+	?>
     </h1>
     <form method="post" action="parking.php" name="parking">
         <fieldset id="parking-city-fieldset">
@@ -36,7 +45,7 @@ error_reporting(E_ALL ^ E_WARNING);
         </fieldset>
         <fieldset id="parking-time-fieldset">
             <legend>Please Choose available time slot</legend>
-            <label for="parking-time">Cities</label>
+            <label for="parking-time">Available Times</label>
             <select name="parking-time">
                 <option value="5AM-6AM">5AM-6AM</option>
                 <option value="6AM-7AM">6AM-7AM</option>
@@ -61,7 +70,7 @@ error_reporting(E_ALL ^ E_WARNING);
         </fieldset>
 
         <fieldset id="parking-address-fieldset">
-            <legend>Please Choose a City To Park</legend>
+            <legend>Please Choose a Location</legend>
             <label for="parking-address">Cities</label>
             <select name="parking-address">
                 <option value="1">777 Brockton Avenue</option>
@@ -73,7 +82,7 @@ error_reporting(E_ALL ^ E_WARNING);
                 <option value="7">214 Haynes Street</option>
             </select>
         </fieldset>
-        <input type="submit" name="Book it!" value="book">
+        <input type="submit" name="Book it!" value="Book">
 
         <?php
         include 'db_controller.php';

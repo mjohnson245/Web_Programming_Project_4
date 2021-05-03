@@ -9,9 +9,7 @@ body {
 header {
 	margin: auto;
 	text-align:center;
-	border:solid black 4px;
-	background-color: rgba(0,0,0,0.5);
-	color: white;
+	
 }
 
 .error{

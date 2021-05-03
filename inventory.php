@@ -77,7 +77,7 @@
 				<option value="Silver">Silver</option>
 			</select>
 		</fieldset>
-		<h2>Subtotal: </h2>
+		
 		<input type="submit" name="inventory" value="Add to Cart">
 	</form>
 	<span class="error">
