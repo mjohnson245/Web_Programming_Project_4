@@ -1,6 +1,8 @@
 body {
-	font-family: Verdana, Arial;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
 }
+
 
 header {
 	margin: auto;
@@ -26,6 +28,7 @@ header {
 	display: flex;
 	flex-wrap: nowrap;
 	text-align: center;
+	margin: 0 5px;
 }
 
 #signup-main {
@@ -43,7 +46,7 @@ header {
 	background-color: rgba(0,0,0,0.5);
 	color: white;
 }
-
+/*
 #inventory-body {
 	background-color: rgba(0,0,0,0.5);
 	color: white;
@@ -57,7 +60,7 @@ header {
 #success-body {
 	background-color: rgba(0,0,0,0.5);
 	color: white;
-}
+}*/
 html {
 	background: url(https://buyyourproduct.com/wp-content/uploads/Guide-to-Car-Rental-Companies-4.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;

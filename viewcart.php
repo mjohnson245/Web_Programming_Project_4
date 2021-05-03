@@ -16,7 +16,7 @@
 		<div>
 			<h2>Cars</h2>
 			<?php
-				require "db_controller.php";
+				include "db_controller.php";
 
 				$conn = new mysqli($db_server, $db_username, $db_password, $db_name);
 				// Check connection
@@ -56,22 +56,22 @@
 					$subTotal = $subTotal + $suvPrice;
 					$_SESSION["sub"] = $subTotal;
 					$sql = "UPDATE car SET price='".$_SESSION["sub"]."'";
-					echo "Price: ".$_SESSION["sub"];
+					echo "Price: $".$_SESSION["sub"];
 				} elseif($_SESSION["Cartype"] == "Truck") {
 					$subTotal = $subTotal + $truckPrice;
 					$_SESSION["sub"] = $subTotal;
 					$sql = "UPDATE car SET price='".$_SESSION["sub"]."'";
-					echo "Price: ".$_SESSION["sub"];
+					echo "Price: $".$_SESSION["sub"];
 				} elseif($_SESSION["Cartype"] == "Sedan") {
 					$subTotal = $subTotal + $sedanPrice;
 					$_SESSION["sub"] = $subTotal;
 					$sql = "UPDATE car SET price='".$_SESSION["sub"]."'";
-					echo "Price: ".$_SESSION["sub"];
+					echo "Price: $".$_SESSION["sub"];
 				} else {
 					$subTotal = $subTotal + $luxuryPrice;
 					$_SESSION["sub"] = $subTotal;
 					$sql = "UPDATE car SET price='".$_SESSION["sub"]."'";
-					echo "Price: ".$_SESSION["sub"];
+					echo "Price: $".$_SESSION["sub"];
 				}
 			?>
 		</div>
