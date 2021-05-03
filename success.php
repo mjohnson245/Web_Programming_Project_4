@@ -32,6 +32,6 @@
 	<br><br>
 	<a href="menu.php" class="signup">Back to Homepage</a>
 	<p>or</p>
-	<a href="" class="signup">Find parking</a>
+	<a href="./parking.php" class="signup">Find parking</a>
 </body>
 </html>
