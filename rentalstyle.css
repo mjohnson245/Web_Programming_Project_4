@@ -1,6 +1,10 @@
 body {
-	font-family: Verdana, Arial;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	padding: 20px;
+	border: solid 4px black;
 }
+
 
 header {
 	margin: auto;
@@ -26,24 +30,20 @@ header {
 	display: flex;
 	flex-wrap: nowrap;
 	text-align: center;
+	margin: 0 5px;
 }
 
 #signup-main {
 	margin: auto;
 	text-align:center;
-	border: solid 4px black;
-	background-color: rgba(0,0,0,0.5);
-	color: white;
 }
 
 #login-main {
 	margin: auto;
 	text-align:center;
-	border: solid 4px black;
-	background-color: rgba(0,0,0,0.5);
-	color: white;
+	
 }
-
+/*
 #inventory-body {
 	background-color: rgba(0,0,0,0.5);
 	color: white;
@@ -57,7 +57,7 @@ header {
 #success-body {
 	background-color: rgba(0,0,0,0.5);
 	color: white;
-}
+}*/
 html {
 	background: url(https://buyyourproduct.com/wp-content/uploads/Guide-to-Car-Rental-Companies-4.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -65,3 +65,68 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+
+row {
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.col-25 {
+  -ms-flex: 25%;
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; 
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; 
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #DC143C;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+#ct{
+  float:right;
+}
+a:visited {
+  color: yellow;
+}
+
+
