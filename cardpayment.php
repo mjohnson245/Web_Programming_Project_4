@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Your Cart</title>
-	<link rel="stylesheet" type="text/css" href="card.css">
+	<link rel="stylesheet" type="text/css" href="rentalstyle.css">
 </head>
 <body>
 	<div class="row">
@@ -19,7 +19,6 @@
 				<input type="text" id="ccnum" name="cardnumber">
 				<label for="expmonth">Exp Month</label>
 				<input type="text" id="expmonth" name="expmonth">
-
 				<div class="row">
 				  <div class="col-50">
 					<label for="expyear">Exp Year</label>
@@ -31,12 +30,10 @@
 				  </div>
 				</div>
 			  </div>
-
 			</div>
 		  </form>
 		</div>
 	  </div>
-
 	  <div class="col-25">
 		<div class="container">
 		  <h4>Cart
@@ -45,9 +42,15 @@
 			  <b>4</b>
 			</span>
 		  </h4>
-		  <p><a href="#">Car 1</a> <span class="price">$200</span></p>
+		  <p><a href="#">Car</a></p>
+			<?php
+				echo "$".$_SESSION["sub"];
+			?>
 		  <hr>
-		  <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+		  <p style="color:black">Total:</p>
+			<?php
+				echo "$".$_SESSION["Total"];
+			?>
 		</div>
 	  </div>
 	</div>

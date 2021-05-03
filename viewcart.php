@@ -79,18 +79,18 @@
 			<h2>Summary</h2>
 			<?php
 				//Finding tax and total based on subtotal
-				echo "Subtotal: ".$_SESSION["sub"]."<br>";
+				echo "Subtotal: $".$_SESSION["sub"]."<br>";
 				
 				$subTotal = $_SESSION["sub"];
-				$tax = $subTotal * 0.8;
+				$tax = $subTotal * 0.08;
 				$_SESSION["Tax"] = $tax;
-				echo "Tax: ".$_SESSION["Tax"]."<br>";
+				echo "Tax: $".$_SESSION["Tax"]."<br>";
 				
 				echo "<hr>";
 				
 				$total = $subTotal + $tax;
 				$_SESSION["Total"] = $total;
-				echo "Total: ".$_SESSION["Total"];
+				echo "Total: $".$_SESSION["Total"];
 				$sql = "UPDATE userinfo SET total_price='".$_SESSION["Total"]."'";	
 			?>
 		</div>
